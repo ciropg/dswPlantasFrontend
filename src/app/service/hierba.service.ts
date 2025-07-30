@@ -22,4 +22,10 @@ export class HierbaService {
   listarHierbas(): Observable<IHierbaResponse[]> {
     return this.http.get<IHierbaResponse[]>(`${Base_URL}/hierbas`);
   }
+  eliminarHierba(id: number): Observable<void> {
+    return this.http.delete<void>(`${Base_URL}/hierbas/${id}`);
+  }
+  actualizarHierba(id: number, hierba: IHierbaRequest): Observable<IHierbaResponse> {
+    return this.http.put<IHierbaResponse>(`${Base_URL}/hierbas/actualizar/${id}`, hierba);
+  }      
 }

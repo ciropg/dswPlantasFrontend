@@ -19,5 +19,6 @@ export class UsuarioService {
     console.log('Intentando login con:', usuarioLogin);
     return this.http.post<IUsuarioResponse>(`${Base_URL}/usuarios/login`, usuarioLogin);
   }
+  
 
 }
